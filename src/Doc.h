@@ -74,7 +74,7 @@ class Doc {
     const WCHAR* GetFilePath() const;
     const WCHAR* GetDefaultFileExt() const;
     WCHAR* GetProperty(DocumentProperty prop) const;
-    std::string_view GetHtmlData() const;
+    std::string GetHtmlData() const;
 
     ImageData* GetCoverImage() const;
     bool HasToc() const;

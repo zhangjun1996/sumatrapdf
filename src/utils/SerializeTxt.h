@@ -48,7 +48,7 @@ struct FieldMetadata {
 
 OwnedData Serialize(const uint8_t* data, const StructMetadata* def);
 uint8_t* Deserialize(struct TxtNode* root, const StructMetadata* def);
-uint8_t* Deserialize(const std::string_view str, const StructMetadata* def);
+uint8_t* Deserialize(const std::string str, const StructMetadata* def);
 void FreeStruct(uint8_t* data, const StructMetadata* def);
 
 } // namespace sertxt

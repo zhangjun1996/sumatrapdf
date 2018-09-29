@@ -380,7 +380,7 @@ class Allocator {
     static void* Realloc(Allocator* a, void* mem, size_t size);
     static void* MemDup(Allocator* a, const void* mem, size_t size, size_t padding = 0);
     static char* StrDup(Allocator* a, const char* str);
-    static std::string_view AllocString(Allocator* a, std::string_view str);
+    static std::string AllocString(Allocator* a, std::string str);
 
 #if OS_WIN
     static WCHAR* StrDup(Allocator* a, const WCHAR* str);
@@ -530,7 +530,7 @@ class OwnedData {
     void TakeOwnership(const char* s, size_t size = 0);
     char* StealData();
     char* Get() const;
-    std::string_view AsView() const;
+    std::string AsView() const;
 
     // creates a copy of s
     static OwnedData MakeFromStr(const char* s, size_t size = 0);

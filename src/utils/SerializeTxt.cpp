@@ -511,7 +511,7 @@ uint8_t* Deserialize(struct TxtNode* root, const StructMetadata* def) {
     return DeserializeRec(ds, root, def);
 }
 
-uint8_t* Deserialize(const std::string_view str, const StructMetadata* def) {
+uint8_t* Deserialize(const std::string str, const StructMetadata* def) {
     if (!str.data()) {
         return nullptr;
     }

@@ -10,7 +10,7 @@ namespace conv {
 // As an optimization, can return src if the string already is
 // valid utf8. Otherwise returns a copy of the string and the
 // caller has to free() it
-MaybeOwnedData UnknownToUtf8(const std::string_view& str) {
+MaybeOwnedData UnknownToUtf8(const std::string& str) {
     size_t n = str.size();
     const char* s = str.data();
 

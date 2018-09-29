@@ -435,7 +435,7 @@ void EpubDoc::ParseMetadata(const char* content) {
     }
 }
 
-std::string_view EpubDoc::GetHtmlData() const {
+std::string EpubDoc::GetHtmlData() const {
     return htmlData.AsView();
 }
 
@@ -864,7 +864,7 @@ void Fb2Doc::ExtractImage(HtmlPullParser* parser, HtmlToken* tok) {
     images.Append(data);
 }
 
-std::string_view Fb2Doc::GetXmlData() const {
+std::string Fb2Doc::GetXmlData() const {
     return {xmlData.Get(), xmlData.size()};
 }
 
@@ -1065,7 +1065,7 @@ bool PalmDoc::Load() {
         return false;
     }
 
-    const std::string_view text = mobiDoc->GetHtmlData();
+    const std::string text = mobiDoc->GetHtmlData();
     UINT codePage = GuessTextCodepage(text.data(), text.size(), CP_ACP);
     OwnedData textUtf8(str::ToMultiByte(text.data(), codePage, CP_UTF8));
 
@@ -1089,7 +1089,7 @@ bool PalmDoc::Load() {
     return true;
 }
 
-std::string_view PalmDoc::GetHtmlData() const {
+std::string PalmDoc::GetHtmlData() const {
     return htmlData.AsView();
 }
 
@@ -1185,7 +1185,7 @@ bool HtmlDoc::Load() {
     return true;
 }
 
-std::string_view HtmlDoc::GetHtmlData() const {
+std::string HtmlDoc::GetHtmlData() const {
     return htmlData.AsView();
 }
 
@@ -1455,7 +1455,7 @@ bool TxtDoc::Load() {
     return true;
 }
 
-std::string_view TxtDoc::GetHtmlData() const {
+std::string TxtDoc::GetHtmlData() const {
     return htmlData.AsView();
 }
 

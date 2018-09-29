@@ -42,7 +42,7 @@ bool CreateTreeCtrl(TreeCtrl*, const WCHAR* title);
 
 void ClearTreeCtrl(TreeCtrl*);
 TVITEM* TreeCtrlGetItem(TreeCtrl*, HTREEITEM);
-std::wstring_view TreeCtrlGetInfoTip(TreeCtrl*, HTREEITEM);
+std::wstring TreeCtrlGetInfoTip(TreeCtrl*, HTREEITEM);
 HTREEITEM TreeCtrlGetRoot(TreeCtrl*);
 HTREEITEM TreeCtrlGetChild(TreeCtrl*, HTREEITEM);
 HTREEITEM TreeCtrlGetNextSibling(TreeCtrl*, HTREEITEM);

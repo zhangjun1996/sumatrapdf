@@ -60,7 +60,7 @@ class AutoFreeStr : public ScopedMem<T> {
         }
     }
     // only valid for T = char
-    std::string_view AsView() const { return {this->ptr, str::Len(this->ptr)}; }
+    std::string AsView() const { return {this->ptr, str::Len(this->ptr)}; }
 };
 
 typedef AutoFreeStr<char> AutoFree;

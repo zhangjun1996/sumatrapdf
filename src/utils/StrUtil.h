@@ -183,7 +183,7 @@ size_t WcharToUtf8Buf(const WCHAR* s, char* bufOut, size_t cbBufOutSize);
 
 namespace conv {
 
-MaybeOwnedData UnknownToUtf8(const std::string_view&);
+MaybeOwnedData UnknownToUtf8(const std::string&);
 
 #if OS_WIN
 inline WCHAR* FromCodePage(const char* src, UINT cp) {

@@ -490,7 +490,7 @@ bool MobiDoc::ParseHeader() {
         return false;
     }
 
-    std::string_view rec = pdbReader->GetRecord(0);
+    std::string rec = pdbReader->GetRecord(0);
     const char* firstRecData = rec.data();
     size_t recSize = rec.size();
     if (!firstRecData || recSize < kPalmDocHeaderLen) {
@@ -718,7 +718,7 @@ static bool KnownImageFormat(const char* data, size_t dataLen) {
 bool MobiDoc::LoadImage(size_t imageNo) {
     size_t imageRec = imageFirstRec + imageNo;
 
-    std::string_view rec = pdbReader->GetRecord(imageRec);
+    std::string rec = pdbReader->GetRecord(imageRec);
     const char* imgData = rec.data();
     size_t imgDataLen = rec.size();
     if (!imgData || (0 == imgDataLen))
@@ -808,7 +808,7 @@ static size_t GetRealRecordSize(const u8* recData, size_t recLen, size_t trailer
 // Load a given record of a document into strOut, uncompressing if necessary.
 // Returns false if error.
 bool MobiDoc::LoadDocRecordIntoBuffer(size_t recNo, str::Str<char>& strOut) {
-    std::string_view rec = pdbReader->GetRecord(recNo);
+    std::string rec = pdbReader->GetRecord(recNo);
     const char* recData = rec.data();
     if (nullptr == recData) {
         return false;
@@ -878,8 +878,8 @@ bool MobiDoc::LoadDocument(PdbReader* pdbReader) {
     return true;
 }
 
-std::string_view MobiDoc::GetHtmlData() const {
-    return doc ? doc->AsView() : std::string_view();
+std::string MobiDoc::GetHtmlData() const {
+    return doc ? doc->AsView() : std::string();
 }
 
 WCHAR* MobiDoc::GetProperty(DocumentProperty prop) {

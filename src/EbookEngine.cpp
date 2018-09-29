@@ -1041,7 +1041,7 @@ PageDestination* MobiEngineImpl::GetNamedDest(const WCHAR* name) {
     }
     CrashIf(pageNo < 1 || pageNo > PageCount());
 
-    const std::string_view htmlData = doc->GetHtmlData();
+    const std::string htmlData = doc->GetHtmlData();
     size_t htmlLen = htmlData.size();
     const char* start = htmlData.data();
     if ((size_t)filePos > htmlLen) {
@@ -1200,7 +1200,7 @@ class ChmDataCache {
         }
     }
 
-    std::string_view GetHtmlData() { return {html, str::Len(html)}; }
+    std::string GetHtmlData() { return {html, str::Len(html)}; }
 
     // TODO: remove
     const char* GetHtmlData(size_t* lenOut) {

@@ -902,7 +902,7 @@ bool CbxEngineImpl::FinishLoading() {
     if (metadata.data) {
         ParseComicInfoXml(metadata.data);
     }
-    std::string_view comment = cbxFile->GetComment();
+    std::string comment = cbxFile->GetComment();
     if (comment.data()) {
         json::Parse(comment.data(), this);
     }

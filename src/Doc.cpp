@@ -167,7 +167,7 @@ WCHAR* Doc::GetProperty(DocumentProperty prop) const {
     }
 }
 
-std::string_view Doc::GetHtmlData() const {
+std::string Doc::GetHtmlData() const {
     switch (type) {
         case DocType::Epub:
             return epubDoc->GetHtmlData();

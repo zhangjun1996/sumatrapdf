@@ -111,7 +111,7 @@ static void MobiSaveHtml(const WCHAR* filePathBase, MobiDoc* mb) {
 
     AutoFreeW outFile(str::Join(filePathBase, L"_pp.html"));
 
-    const std::string_view htmlData = mb->GetHtmlData();
+    const std::string htmlData = mb->GetHtmlData();
     size_t htmlLen = htmlData.size();
     const char* html = htmlData.data();
     size_t ppHtmlLen;

@@ -97,7 +97,7 @@ size_t PdbReader::GetRecordCount() {
 }
 
 // don't free, memory is owned by us
-std::string_view PdbReader::GetRecord(size_t recNo) {
+std::string PdbReader::GetRecord(size_t recNo) {
     size_t nRecs = recInfos.size();
     CrashIf(recNo >= nRecs);
     if (recNo >= nRecs) {

@@ -119,7 +119,7 @@ EbookFormattingThread::EbookFormattingThread(Doc doc, HtmlFormatterArgs* args, E
                                              ControllerCallback* cb)
     : doc(doc), formatterArgs(args), cb(cb), controller(ctrl), reparseIdx(reparseIdx) {
     CrashIf(reparseIdx < 0);
-    AssertCrash(doc.IsDocLoaded() || (doc.IsNone() && (nullptr != args->htmlStr)));
+//    AssertCrash(doc.IsDocLoaded() || (doc.IsNone() && (nullptr != args->htmlStr)));
 }
 
 EbookFormattingThread::~EbookFormattingThread() {

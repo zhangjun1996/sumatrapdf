@@ -49,7 +49,7 @@ class MobiDoc {
 
     ~MobiDoc();
 
-    std::string_view GetHtmlData() const;
+    std::string GetHtmlData() const;
     size_t GetHtmlDataSize() const { return doc->size(); }
     ImageData* GetCoverImage();
     ImageData* GetImage(size_t imgRecIndex) const;

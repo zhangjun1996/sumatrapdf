@@ -48,7 +48,7 @@ class EpubDoc {
     explicit EpubDoc(IStream* stream);
     ~EpubDoc();
 
-    std::string_view GetHtmlData() const;
+    std::string GetHtmlData() const;
 
     ImageData* GetImageData(const char* id, const char* pagePath);
     OwnedData GetFileData(const char* relPath, const char* pagePath);
@@ -88,7 +88,7 @@ class Fb2Doc {
     explicit Fb2Doc(IStream* stream);
     ~Fb2Doc();
 
-    std::string_view Fb2Doc::GetXmlData() const;
+    std::string Fb2Doc::GetXmlData() const;
     // TODO: remove those
     const char* GetXmlData(size_t* lenOut) const;
     size_t GetXmlDataSize() const;
@@ -123,7 +123,7 @@ class PalmDoc {
     explicit PalmDoc(const WCHAR* fileName);
     ~PalmDoc();
 
-    std::string_view PalmDoc::GetHtmlData() const;
+    std::string PalmDoc::GetHtmlData() const;
 
     WCHAR* GetProperty(DocumentProperty prop) const;
     const WCHAR* GetFileName() const;
@@ -151,7 +151,7 @@ class HtmlDoc {
     explicit HtmlDoc(const WCHAR* fileName);
     ~HtmlDoc();
 
-    std::string_view HtmlDoc::GetHtmlData() const;
+    std::string HtmlDoc::GetHtmlData() const;
 
     ImageData* GetImageData(const char* id);
     char* GetFileData(const char* relPath, size_t* lenOut);
@@ -175,7 +175,7 @@ class TxtDoc {
   public:
     explicit TxtDoc(const WCHAR* fileName);
 
-    std::string_view TxtDoc::GetHtmlData() const;
+    std::string TxtDoc::GetHtmlData() const;
 
     WCHAR* GetProperty(DocumentProperty prop) const;
     const WCHAR* GetFileName() const;

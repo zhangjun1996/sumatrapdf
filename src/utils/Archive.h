@@ -22,7 +22,7 @@ class Archive {
 
     struct FileInfo {
         size_t fileId;
-        std::string_view name;
+        std::string name;
         int64_t fileTime; // this is typedef'ed as time64_t in unrar.h
         size_t fileSizeUncompressed;
 
@@ -52,7 +52,7 @@ class Archive {
     OwnedData GetFileDataByName(const char* filename);
     OwnedData GetFileDataById(size_t fileId);
 
-    std::string_view GetComment();
+    std::string GetComment();
 
   protected:
     // used for allocating strings that are referenced by ArchFileInfo::name

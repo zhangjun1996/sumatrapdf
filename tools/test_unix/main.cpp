@@ -118,7 +118,7 @@ VerticalLayout [
 
 void testTxtParser() {
     size_t ebookWinDescLen = static_strlen(ebookWinDesc);
-    std::string_view ebookStr(ebookWinDesc, ebookWinDescLen);
+    std::string ebookStr(ebookWinDesc, ebookWinDescLen);
 
     TxtParser parser;
     parser.SetToParse(ebookStr);

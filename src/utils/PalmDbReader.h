@@ -44,7 +44,7 @@ class PdbReader {
 
     const char* GetDbType();
     size_t GetRecordCount();
-    std::string_view GetRecord(size_t recNo);
+    std::string GetRecord(size_t recNo);
 
     static PdbReader* CreateFromData(OwnedData data);
     static PdbReader* CreateFromFile(const char* filePath);

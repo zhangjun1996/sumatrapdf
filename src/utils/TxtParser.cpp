@@ -121,7 +121,7 @@ TxtNode* TxtParser::AllocTxtNodeFromToken(const Token& tok, TxtNode::Type nodeTy
 }
 
 // we will modify s in-place
-void TxtParser::SetToParse(const std::string_view& str) {
+void TxtParser::SetToParse(const std::string& str) {
     auto tmp = str::conv::UnknownToUtf8(str);
     data = tmp.StealData();
     char* d = data.data;

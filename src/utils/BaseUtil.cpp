@@ -52,7 +52,7 @@ char* Allocator::StrDup(Allocator* a, const char* s) {
 // allocates a copy of the source string inside the allocator.
 // it's only safe in PoolAllocator because allocated data
 // never moves in memory
-std::string_view Allocator::AllocString(Allocator* a, std::string_view str) {
+std::string Allocator::AllocString(Allocator* a, std::string str) {
     size_t n = str.size();
     size_t toCopy = n + 1;
     const char* src = str.data();
@@ -61,7 +61,7 @@ std::string_view Allocator::AllocString(Allocator* a, std::string_view str) {
     }
     void* dst = Allocator::Alloc(a, toCopy);
     memcpy(dst, (const void*)src, toCopy);
-    return std::string_view((const char*)dst, n);
+    return std::string((const char*)dst, n);
 }
 
 #if OS_WIN
@@ -200,7 +200,7 @@ char* OwnedData::Get() const {
     return data;
 }
 
-std::string_view OwnedData::AsView() const {
+std::string OwnedData::AsView() const {
     return {data, size};
 }
 

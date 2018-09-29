@@ -52,8 +52,8 @@ class MemoryProtector {
     bool isGood = false;
 };
 
-static IMAGE_THUNK_DATA* FindIatThunkInModule(void* moduleBase, const std::string_view& dllName,
-                                              const std::string_view& apiName) {
+static IMAGE_THUNK_DATA* FindIatThunkInModule(void* moduleBase, const std::string& dllName,
+                                              const std::string& apiName) {
     AssertCrash(moduleBase != nullptr);
     if (moduleBase == nullptr)
         return nullptr;
@@ -110,7 +110,7 @@ static IMAGE_THUNK_DATA* FindIatThunkInModule(void* moduleBase, const std::strin
     return nullptr;
 }
 
-static IMAGE_THUNK_DATA* FindIatThunk(const std::string_view& dllName, const std::string_view& apiName,
+static IMAGE_THUNK_DATA* FindIatThunk(const std::string& dllName, const std::string& apiName,
                                       const std::wstring moduleName = L"") {
 #if defined(_WIN64)
     PEB* peb = (PPEB)__readgsqword(0x60);
@@ -142,11 +142,11 @@ static IMAGE_THUNK_DATA* FindIatThunk(const std::string_view& dllName, const std
     return pThunk;
 }
 
-IatHook::IatHook(const std::string_view& dllName, const std::string_view& apiName, const char* fnCallback,
+IatHook::IatHook(const std::string& dllName, const std::string& apiName, const char* fnCallback,
                  uint64_t* userOrigVar, const std::wstring& moduleName)
     : IatHook(dllName, apiName, (uint64_t)fnCallback, userOrigVar, moduleName) {}
 
-IatHook::IatHook(const std::string_view& dllName, const std::string_view& apiName, const uint64_t fnCallback,
+IatHook::IatHook(const std::string& dllName, const std::string& apiName, const uint64_t fnCallback,
                  uint64_t* userOrigVar, const std::wstring& moduleName)
     : m_moduleName(moduleName),
       m_dllName(dllName),

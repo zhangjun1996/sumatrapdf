@@ -43,7 +43,7 @@ struct VerticalLayoutDef {
 extern const StructMetadata gButtonVectorDefMetadata;
 
 inline ButtonVectorDef* DeserializeButtonVectorDef(char* data, size_t dataLen) {
-    auto s = std::string_view(data, dataLen);
+    auto s = std::string(data, dataLen);
     return (ButtonVectorDef*)Deserialize(s, &gButtonVectorDefMetadata);
 }
 
@@ -61,7 +61,7 @@ inline void FreeButtonVectorDef(ButtonVectorDef* val) {
 extern const StructMetadata gButtonDefMetadata;
 
 inline ButtonDef* DeserializeButtonDef(char* data, size_t dataLen) {
-    auto s = std::string_view(data, dataLen);
+    auto s = std::string(data, dataLen);
     return (ButtonDef*)Deserialize(s, &gButtonDefMetadata);
 }
 
@@ -79,7 +79,7 @@ inline void FreeButtonDef(ButtonDef* val) {
 extern const StructMetadata gScrollBarDefMetadata;
 
 inline ScrollBarDef* DeserializeScrollBarDef(char* data, size_t dataLen) {
-    auto s = std::string_view(data, dataLen);
+    auto s = std::string(data, dataLen);
     return (ScrollBarDef*)Deserialize(s, &gScrollBarDefMetadata);
 }
 
@@ -97,7 +97,7 @@ inline void FreeScrollBarDef(ScrollBarDef* val) {
 extern const StructMetadata gDirectionalLayoutDataDefMetadata;
 
 inline DirectionalLayoutDataDef* DeserializeDirectionalLayoutDataDef(char* data, size_t dataLen) {
-    auto s = std::string_view(data, dataLen);
+    auto s = std::string(data, dataLen);
     return (DirectionalLayoutDataDef*)Deserialize(s, &gDirectionalLayoutDataDefMetadata);
 }
 
@@ -115,7 +115,7 @@ inline void FreeDirectionalLayoutDataDef(DirectionalLayoutDataDef* val) {
 extern const StructMetadata gHorizontalLayoutDefMetadata;
 
 inline HorizontalLayoutDef* DeserializeHorizontalLayoutDef(char* data, size_t dataLen) {
-    auto s = std::string_view(data, dataLen);
+    auto s = std::string(data, dataLen);
     return (HorizontalLayoutDef*)Deserialize(s, &gHorizontalLayoutDefMetadata);
 }
 
@@ -133,7 +133,7 @@ inline void FreeHorizontalLayoutDef(HorizontalLayoutDef* val) {
 extern const StructMetadata gVerticalLayoutDefMetadata;
 
 inline VerticalLayoutDef* DeserializeVerticalLayoutDef(char* data, size_t dataLen) {
-    auto s = std::string_view(data, dataLen);
+    auto s = std::string(data, dataLen);
     return (VerticalLayoutDef*)Deserialize(s, &gVerticalLayoutDefMetadata);
 }
 

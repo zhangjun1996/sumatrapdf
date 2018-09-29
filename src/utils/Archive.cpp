@@ -154,7 +154,7 @@ OwnedData Archive::GetFileDataById(size_t fileId) {
     return data;
 }
 
-std::string_view Archive::GetComment() {
+std::string Archive::GetComment() {
     if (!ar_) {
         return {};
     }
@@ -171,7 +171,7 @@ std::string_view Archive::GetComment() {
     if (nRead != n) {
         return {};
     }
-    return std::string_view(comment, n);
+    return std::string(comment, n);
 }
 
 ///// format specific handling /////

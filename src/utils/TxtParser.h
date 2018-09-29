@@ -76,7 +76,7 @@ struct TxtParser {
     TxtNode* AllocTxtNode(TxtNode::Type);
     TxtNode* AllocTxtNodeFromToken(const Token&, TxtNode::Type);
 
-    void SetToParse(const std::string_view&);
+    void SetToParse(const std::string&);
 };
 
 bool ParseTxt(TxtParser& parser);

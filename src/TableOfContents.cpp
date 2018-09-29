@@ -62,7 +62,7 @@ static void CustomizeTocInfoTip(TreeCtrl* w, NMTVGETINFOTIP* nm) {
     }
 
     if (rcLine.right + 2 < rcLabel.right) {
-        std::wstring_view currInfoTip = TreeCtrlGetInfoTip(w, nm->hItem);
+        std::wstring currInfoTip = TreeCtrlGetInfoTip(w, nm->hItem);
         infotip.Append(currInfoTip.data());
         infotip.Append(L"\r\n");
     }

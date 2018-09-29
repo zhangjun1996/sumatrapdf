@@ -452,7 +452,7 @@ static void ParseMuiDefinition(TxtNode* root, ParsedMui& res) {
 }
 
 // s might be modified in-place
-bool MuiFromText(ParsedMui& res, const std::string_view& str) {
+bool MuiFromText(ParsedMui& res, const std::string& str) {
     TxtParser parser;
     parser.SetToParse(str);
     bool ok = ParseTxt(parser);
